@@ -1,20 +1,54 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title  class="ion-text-center">
+      navaras
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true">
+<p class="ion-text-center"><strong>One stop app for all your entertainment</strong></p>      
+<!--p><ion-button (click)="refreshList()" size="small">Next2</ion-button></p-->
+  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+
+  <ion-segment color="tertiary" value="all">
+    <ion-segment-button value="all" (click)="getList('')">
+      <ion-label>All</ion-label>
+    </ion-segment-button> 
+    <ion-segment-button value="action" (click)="getList('genre=action')">
+      <ion-label>Action</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="romance" (click)="getList('genre=romance')">
+      <ion-label>Romance</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="comedy" (click)="getList('genre=comedy')">
+      <ion-label>Comedy</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="horror" (click)="getList('genre=horror')">
+      <ion-label>Horror</ion-label>
+    </ion-segment-button>            
+  </ion-segment>
+
+  <ion-card *ngFor="let m of movies">
+    <img [src]="m.img" (click)="showVideo(m.playLink, m.title)"/>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">{{m.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{m.description}}
+      <ion-item>
+        <ion-label color="warning">{{m.year}}</ion-label>
+        <ion-note slot="end" color="primary">{{m.duration}}</ion-note>
+      </ion-item>      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="refreshList($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

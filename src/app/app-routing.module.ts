@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'video-dialog',
+    loadChildren: () => import('./pages/video-dialog/video-dialog.module').then( m => m.VideoDialogPageModule)
+  },
 ];
 
 @NgModule({
