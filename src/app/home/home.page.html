@@ -30,19 +30,39 @@
     </ion-segment-button>            
   </ion-segment>
 
-  <ion-card *ngFor="let m of movies">
-    <img [src]="m.img" (click)="showVideo(m.playLink, m.title)"/>
-    <ion-card-header>
-      <ion-card-title class="ion-text-center">{{m.title}}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      {{m.description}}
-      <ion-item>
-        <ion-label color="warning">{{m.year}}</ion-label>
-        <ion-note slot="end" color="primary">{{m.duration}}</ion-note>
-      </ion-item>      
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let m of movies;let i = index">
+        <ion-card>
+          <ion-card-header>
+          </ion-card-header>          
+          <img [src]="m.img" (click)="showDetails(m)"/>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <ion-chip size="small">
+                    <ion-label >{{m.language}}</ion-label>
+                  </ion-chip>
+                </ion-col>
+                <ion-col class="ion-text-center">
+                  <ion-chip>
+                    <ion-label>{{m.year}}</ion-label>
+                  </ion-chip>                    
+                </ion-col>
+                <ion-col class="ion-text-center">
+                  <ion-chip>
+                    <ion-label>{{m.duration}}</ion-label>
+                  </ion-chip>                    
+                </ion-col>                
+              </ion-row>
+            </ion-grid>                
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="refreshList($event)">
     <ion-infinite-scroll-content

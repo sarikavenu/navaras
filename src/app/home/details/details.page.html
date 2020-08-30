@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">{{movie.title}}</ion-title>
+    <ion-button (click)="dismiss()" slot="end" size="small" class="ion-margin-end">Close</ion-button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-header>
+      </ion-card-header>
+      <img [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>   
+      <ion-card-content>
+        {{movie.description}}
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <ion-label><strong>Language</strong></ion-label>
+            </ion-col>
+            <ion-col>
+                <strong>Year</strong>
+            </ion-col>
+            <ion-col>
+                <strong>Duration</strong>
+             </ion-col>                
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                {{movie.language}}
+            </ion-col>
+            <ion-col>
+                {{movie.year}}
+            </ion-col>
+            <ion-col>
+                {{movie.duration}}
+             </ion-col>                
+          </ion-row>
+          <ion-row *ngIf="movie.description">
+            <ion-col>
+                <strong>Storyline</strong>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{movie.description}}
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="movie.staring">
+            <ion-col>
+                <strong>Starring</strong>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{movie.staring}}
+            </ion-col>
+          </ion-row>                                          
+        </ion-grid>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

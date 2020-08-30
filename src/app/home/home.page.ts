@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { DataService, Movie } from "../services/data.service";
-import { VideoDialogPage } from '../pages/video-dialog/video-dialog.page';
+import { DetailsPage } from './details/details.page';
 import { ModalController } from "@ionic/angular";
 
 
@@ -56,8 +56,7 @@ export class HomePage implements OnInit {
       event.target.complete();
       this.data.getList(this.nextpage).subscribe(
         data => {
-          //this.movies = (data as any).results;
-          this.movies.concat((data as any).results);
+          this.movies = (data as any).results;
           this.nextpage = (data as any).next;
         },
         err => {
@@ -71,13 +70,11 @@ export class HomePage implements OnInit {
  
   }
 
-  async showVideo(vUrl: String, vTitle: String) {
-    console.log("vUrl:"+vUrl);
-    let url = vUrl.replace('/watch?v=','/embed/');
-    console.log("url before show:"+url);
+  async showDetails(vMovie: Movie) {
+    console.log("vImg:"+vMovie);
     const modal = await this.modalDialog.create({
-      component: VideoDialogPage,
-      componentProps: { url: url + '?autoplay=1&origin=http://navaras.com/', title: vTitle},
+      component: DetailsPage,
+      componentProps: { movie: vMovie},
       cssClass: 'viewVideoModal'
     })
     return modal.present();
