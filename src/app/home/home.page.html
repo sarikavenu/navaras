@@ -1,69 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title  class="ion-text-center">
-      navaras
-    </ion-title>
+<ion-header class="ion-no-border new-background-color">
+  <ion-toolbar class="new-background-color">
+    <ion-title class="ion-text-center">navaras</ion-title>
   </ion-toolbar>
+  <ion-searchbar color="light" class="searchbar-input" (ionInput)="search($event)"></ion-searchbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
-<p class="ion-text-center"><strong>One stop app for all your entertainment</strong></p>      
-<!--p><ion-button (click)="refreshList()" size="small">Next2</ion-button></p-->
-  <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
 
-  <ion-segment color="tertiary" value="all">
-    <ion-segment-button value="all" (click)="getList('')">
+  <ion-segment style="background:#5a5a5a;" color="tertiary" value="all">
+    <ion-segment-button style="color: white; " value="all" (click)="getList('')">
       <ion-label>All</ion-label>
     </ion-segment-button> 
-    <ion-segment-button value="action" (click)="getList('genre=action')">
+    <ion-segment-button style="color: white; " value="action" (click)="getList('genre=action')">
       <ion-label>Action</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="romance" (click)="getList('genre=romance')">
+    <ion-segment-button style="color: white; " value="romance" (click)="getList('genre=romance')">
       <ion-label>Romance</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="comedy" (click)="getList('genre=comedy')">
+    <ion-segment-button style="color: white;" value="comedy" (click)="getList('genre=comedy')">
       <ion-label>Comedy</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="horror" (click)="getList('genre=horror')">
+    <ion-segment-button style="color: white;" value="horror" (click)="getList('genre=horror')">
       <ion-label>Horror</ion-label>
     </ion-segment-button>            
   </ion-segment>
 
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let m of movies;let i = index">
-        <ion-card>
-          <ion-card-header>
-          </ion-card-header>          
-          <img [src]="m.img" (click)="showDetails(m)"/>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col class="ion-text-center">
-                  <ion-chip size="small">
-                    <ion-label >{{m.language}}</ion-label>
-                  </ion-chip>
-                </ion-col>
-                <ion-col class="ion-text-center">
-                  <ion-chip>
-                    <ion-label>{{m.year}}</ion-label>
-                  </ion-chip>                    
-                </ion-col>
-                <ion-col class="ion-text-center">
-                  <ion-chip>
-                    <ion-label>{{m.duration}}</ion-label>
-                  </ion-chip>                    
-                </ion-col>                
-              </ion-row>
-            </ion-grid>                
-          </ion-card-content>
-        </ion-card>
+      <ion-col sizeLg="3" sizeMd="4" sizeXs="6" *ngFor="let m of movies;let i = index">
+        <!-- <ion-card>
+          <ion-card-header> -->
+            <img [src]="m.img" (click)="showDetails(m)"/>
+          <!-- </ion-card-header>
+        </ion-card> -->
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
+   
   <ion-infinite-scroll threshold="100px" (ionInfinite)="refreshList($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
