@@ -1,15 +1,18 @@
 ion-toolbar {
-  --ion-background-color: #54d61c;
-  // --ion-background-color: # 28a745; //from landing page
+  --ion-background-color: #28a745;
 }
 
 ion-content{
-
   --ion-background-color:#181818;
 }
 
-.new-background-color{
+/*.new-background-color{
   --background: #54d61c;
+}*/
+
+
+ion-col {
+  color:#cfcfcf;
 }
 
 img{

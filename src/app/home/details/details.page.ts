@@ -4,6 +4,7 @@ import { ModalController, NavParams } from '@ionic/angular';
 import {DomSanitizer} from '@angular/platform-browser';
 import { Movie } from "../../services/data.service";
 import { VideoDialogPage } from "../../pages/video-dialog/video-dialog.page";
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-details',

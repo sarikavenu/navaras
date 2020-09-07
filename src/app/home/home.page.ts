@@ -13,6 +13,7 @@ import { ModalController } from "@ionic/angular";
 export class HomePage implements OnInit {
 
   movies: Movie[];
+  
   nextpage: string;
 
   //@ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
@@ -56,16 +57,23 @@ export class HomePage implements OnInit {
       event.target.complete();
       this.data.getList(this.nextpage).subscribe(
         data => {
-          this.movies = (data as any).results;
+          if (this.movies) {
+            var newList: Movie[] = (data as any).results;
+            //if (newList.length < 25) {
+            //  event.target.disabled = true;
+            //}
+            this.movies = this.movies.concat((data as any).results);
+          } else {
+            this.movies = (data as any).results;
+          }
           this.nextpage = (data as any).next;
+          console.log("next page in infinite scroll:"+this.nextpage);
         },
         err => {
           console.log(err);
         }
       );
-      if (this.movies.length < 10 ) {
-        event.target.disabled = true;
-      }
+
     }, 500);
  
   }

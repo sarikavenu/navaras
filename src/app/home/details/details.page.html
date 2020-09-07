@@ -25,36 +25,64 @@
              </ion-col>                
           </ion-row>
           <ion-row>
-            <ion-col>
+            <ion-col color="primary">
                 {{movie.language}}
             </ion-col>
             <ion-col>
                 {{movie.year}}
             </ion-col>
             <ion-col>
-                {{movie.duration}}
+              {{movie.runningTime}}
              </ion-col>                
           </ion-row>
           <ion-row *ngIf="movie.description">
             <ion-col>
-                <strong>Storyline</strong>
+                <strong>Storyline:</strong>
             </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
+             <ion-col>
               {{movie.description}}
             </ion-col>
           </ion-row>
-          <ion-row *ngIf="movie.staring">
+          <ion-row>
             <ion-col>
-                <strong>Starring</strong>
+                <strong>Starring:</strong> {{movie.staring}}
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              {{movie.staring}}
+                <strong>Director:</strong> {{movie.directedBy}}
             </ion-col>
-          </ion-row>                                          
+          </ion-row>           
+          <ion-row>
+            <ion-col>
+                <strong>Producer:</strong> {{movie.producedBy}}
+            </ion-col>
+          </ion-row> 
+          <ion-row>
+            <ion-col>
+                <strong>Music:</strong> {{movie.musicBy}}
+            </ion-col>
+          </ion-row>                     
+          <ion-row>
+            <ion-col>
+                <strong>Writter:</strong> {{movie.writtenBy}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <strong>Cinematography:</strong> {{movie.cinematography}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <strong>Editor:</strong> {{movie.editedBy}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <strong>Production:</strong> {{movie.Production}}
+            </ion-col>
+          </ion-row>
         </ion-grid>
         </ion-card-content>
     </ion-card>

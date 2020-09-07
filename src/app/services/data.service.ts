@@ -46,4 +46,8 @@ export interface Movie {
   img: string;
   description: string;
   duration: string;
+  directedBy: string;
+producedBy: string;
+musicBy:string;
+
 }
