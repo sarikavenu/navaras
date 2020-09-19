@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://navaras.com/movie/api/?format=json&'
+  apiUrl: 'https://navaras.com/movie/api/?format=json&'
 };
 
 /*

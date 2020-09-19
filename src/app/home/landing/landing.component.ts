@@ -13,7 +13,7 @@ export class LandingComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.route.navigate(['/home/home']);
-    }, 3000);
+    }, 3);
   }
 
 

@@ -6,10 +6,16 @@
 </ion-header>
 
 <ion-content>
+<div slot="fixed" class="bg-image" style="background-image: url(movie.img);">
+  <img style="width: 100%;" [src]="movie.img"/>
+</div>
+<div class="bg-text">
+  <img style="width:100%" [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>
+</div>
+</ion-content>
+
+<ion-content>
     <ion-card>
-      <ion-card-header>
-      </ion-card-header>
-      <img [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>   
       <ion-card-content>
         {{movie.description}}
         <ion-grid>
