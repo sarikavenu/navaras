@@ -2,13 +2,17 @@
   --ion-background-color: #28a745; //from landing page
 }
 
-ion-content{
+ion-content {
   --ion-background-color:#181818;
 }
 
 /*.new-background-color{
   --background: #54d61c;
 }*/
+
+.menucontent {
+  --ion-background-color:#ffffff !important;
+}
 
 ion-segment-button {
   color: white;
@@ -29,6 +33,7 @@ ion-segment {
 .headerimg {
   height:25px;
   width:25px;
+  margin-right: 20px;
   display: block !important;
 }
 

@@ -3,6 +3,7 @@ import { IonInfiniteScroll } from '@ionic/angular';
 import { DataService, Movie } from "../services/data.service";
 import { DetailsPage } from './details/details.page';
 import { ModalController } from "@ionic/angular";
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -13,18 +14,21 @@ import { ModalController } from "@ionic/angular";
 export class HomePage implements OnInit {
 
   movies: Movie[];
-  
   nextpage: string;
+  language: string;
 
   //@ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
-  constructor(private data: DataService, public modalDialog: ModalController) {}
+  constructor(private data: DataService, public modalDialog: ModalController,private menuController: MenuController) {}
 
   ngOnInit() {
     this.getList('');
   }
 
   getList(url: string) {
+    if(this.language){
+      url = url + '&language=' + this.language;
+    }
     this.data.getList(url).subscribe(
       data => {
         this.movies = (data as any).results;
@@ -35,6 +39,13 @@ export class HomePage implements OnInit {
         console.log(err);
       }
     );  
+  }
+
+  selectLanguage(language) {
+    this.language = language;
+    console.log("this.language:"+this.language);
+    this.menuController.close();
+    this.getList('');
   }
 
   search(event) {
