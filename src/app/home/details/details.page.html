@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar class="new-background-color">
+  <ion-toolbar class="titlebar">
     <ion-title class="ion-text-center">{{movie.title}}</ion-title>
     <ion-button (click)="dismiss()" slot="end" size="small" class="ion-margin-end">Close</ion-button>
   </ion-toolbar>
@@ -7,7 +7,7 @@
 
 <ion-content>
 <div slot="fixed" class="bg-image" style="background-image: url(movie.img);">
-  <img style="width: 100%;" [src]="movie.img"/>
+  <img style="width:200%;" [src]="movie.img"/>
 </div>
 <div class="bg-text">
   <img style="width:100%" [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>
@@ -15,6 +15,11 @@
 </ion-content>
 
 <ion-content>
+  <ion-list style="text-align:center" > 
+  <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button>
+  <!-- we need to open youtube app when clicked on this button -->
+  <ion-button size="small" color="danger" onclick="window.open('movie.playLink', '_system', 'location=yes');">YouTube</ion-button>
+</ion-list>
     <ion-card>
       <ion-card-content>
         {{movie.description}}
