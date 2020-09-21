@@ -25,8 +25,13 @@ const IOS_ICONS = [
   { source: 'icon-40@2x.png', target: 'AppIcon-40x40@2x.png' },
   { source: 'icon-40@2x.png', target: 'AppIcon-40x40@2x-1.png' },
   { source: 'icon-40@3x.png', target: 'AppIcon-40x40@3x.png' },
+  // { source: 'icon-60.png', target: 'AppIcon-60x60@1x.png' }, // Not created by capacitor
   { source: 'icon-60@2x.png', target: 'AppIcon-60x60@2x.png' },
+  // { source: 'icon-60@2x.png', target: 'AppIcon-60x60@2x-1.png' }, // Not created by capacitor
   { source: 'icon-60@3x.png', target: 'AppIcon-60x60@3x.png' },
+  // { source: 'icon-72.png', target: 'AppIcon-72x72.png' }, // Not created by capacitor
+  // { source: 'icon-72@2x.png', target: 'AppIcon-72x72@2x.png' }, // Not created by capacitor
+  // { source: 'icon-76.png', target: 'AppIcon-76x76.png' }, // Not created by capacitor
   { source: 'icon-76.png', target: 'AppIcon-76x76@1x.png' },
   { source: 'icon-76@2x.png', target: 'AppIcon-76x76@2x.png' },
   { source: 'icon-83.5@2x.png', target: 'AppIcon-83.5x83.5@2x.png' },
@@ -42,32 +47,72 @@ const ANDROID_ICONS = [
   { source: 'drawable-ldpi-icon.png', target: 'drawable-hdpi-icon.png' },
   { source: 'drawable-mdpi-icon.png', target: 'mipmap-mdpi/ic_launcher.png' },
   { source: 'drawable-mdpi-icon.png', target: 'mipmap-mdpi/ic_launcher_round.png' },
-  { source: 'drawable-mdpi-icon.png', target: 'mipmap-mdpi/ic_launcher_foreground.png' },
+  {
+    source: 'drawable-mdpi-icon.png',
+    target: 'mipmap-mdpi/ic_launcher_foreground.png'
+  },
   { source: 'drawable-hdpi-icon.png', target: 'mipmap-hdpi/ic_launcher.png' },
   { source: 'drawable-hdpi-icon.png', target: 'mipmap-hdpi/ic_launcher_round.png' },
-  { source: 'drawable-hdpi-icon.png', target: 'mipmap-hdpi/ic_launcher_foreground.png' },
+  {
+    source: 'drawable-hdpi-icon.png',
+    target: 'mipmap-hdpi/ic_launcher_foreground.png'
+  },
   { source: 'drawable-xhdpi-icon.png', target: 'mipmap-xhdpi/ic_launcher.png' },
   { source: 'drawable-xhdpi-icon.png', target: 'mipmap-xhdpi/ic_launcher_round.png' },
-  { source: 'drawable-xhdpi-icon.png', target: 'mipmap-xhdpi/ic_launcher_foreground.png' },
+  {
+    source: 'drawable-xhdpi-icon.png',
+    target: 'mipmap-xhdpi/ic_launcher_foreground.png'
+  },
   { source: 'drawable-xxhdpi-icon.png', target: 'mipmap-xxhdpi/ic_launcher.png' },
   { source: 'drawable-xxhdpi-icon.png', target: 'mipmap-xxhdpi/ic_launcher_round.png' },
-  { source: 'drawable-xxhdpi-icon.png', target: 'mipmap-xxhdpi/ic_launcher_foreground.png' },
+  {
+    source: 'drawable-xxhdpi-icon.png',
+    target: 'mipmap-xxhdpi/ic_launcher_foreground.png'
+  },
   { source: 'drawable-xxxhdpi-icon.png', target: 'mipmap-xxxhdpi/ic_launcher.png' },
-  { source: 'drawable-xxxhdpi-icon.png', target: 'mipmap-xxxhdpi/ic_launcher_round.png' },
-  { source: 'drawable-xxxhdpi-icon.png', target: 'mipmap-xxxhdpi/ic_launcher_foreground.png' }
+  {
+    source: 'drawable-xxxhdpi-icon.png',
+    target: 'mipmap-xxxhdpi/ic_launcher_round.png'
+  },
+  {
+    source: 'drawable-xxxhdpi-icon.png',
+    target: 'mipmap-xxxhdpi/ic_launcher_foreground.png'
+  }
 ];
 const ANDROID_SPLASHES = [
-  { source: 'drawable-land-mdpi-screen.png', target: 'drawable/splash.png' }, 
+  // { source: 'drawable-land-ldpi-screen.png', target: 'splash.png' }, // Not created by capacitor
+  {
+    source: 'drawable-land-mdpi-screen.png',
+    target: 'drawable/splash.png'
+  }, // new
   { source: 'drawable-land-mdpi-screen.png', target: 'drawable-land-mdpi/splash.png' },
   { source: 'drawable-land-hdpi-screen.png', target: 'drawable-land-hdpi/splash.png' },
-  { source: 'drawable-land-xhdpi-screen.png', target: 'drawable-land-xhdpi/splash.png' },
-  { source: 'drawable-land-xxhdpi-screen.png', target: 'drawable-land-xxhdpi/splash.png' },
-  { source: 'drawable-land-xxxhdpi-screen.png', target: 'drawable-land-xxxhdpi/splash.png' },
+  {
+    source: 'drawable-land-xhdpi-screen.png',
+    target: 'drawable-land-xhdpi/splash.png'
+  },
+  {
+    source: 'drawable-land-xxhdpi-screen.png',
+    target: 'drawable-land-xxhdpi/splash.png'
+  },
+  {
+    source: 'drawable-land-xxxhdpi-screen.png',
+    target: 'drawable-land-xxxhdpi/splash.png'
+  },
   { source: 'drawable-port-mdpi-screen.png', target: 'drawable-port-mdpi/splash.png' },
   { source: 'drawable-port-hdpi-screen.png', target: 'drawable-port-hdpi/splash.png' },
-  { source: 'drawable-port-xhdpi-screen.png', target: 'drawable-port-xhdpi/splash.png' },
-  { source: 'drawable-port-xxhdpi-screen.png', target: 'drawable-port-xxhdpi/splash.png' },
-  { source: 'drawable-port-xxxhdpi-screen.png', target: 'drawable-port-xxxhdpi/splash.png' }
+  {
+    source: 'drawable-port-xhdpi-screen.png',
+    target: 'drawable-port-xhdpi/splash.png'
+  },
+  {
+    source: 'drawable-port-xxhdpi-screen.png',
+    target: 'drawable-port-xxhdpi/splash.png'
+  },
+  {
+    source: 'drawable-port-xxxhdpi-screen.png',
+    target: 'drawable-port-xxxhdpi/splash.png'
+  }
 ];
 
 function copyImages(sourcePath, targetPath, images) {
