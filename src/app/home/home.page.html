@@ -74,15 +74,17 @@
 
 <ion-content fullscreen>
   <ion-grid>
-    <ion-row id="list">
-      <ion-col sizeLg="3" sizeMd="4" sizeXs="6" *ngFor="let m of movies;let i = index">
-        <img class="movieImg" [src]="m.img" (click)="showDetails(m)" />
+    <ion-row>
+      <ion-col sizeLg="3" sizeMd="4" sizeXs="4" *ngFor="let m of movies;let i = index">
+        <div>
+          <img class="movieImg" [src]="m.img" (click)="showDetails(m)" />
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
+
   <ion-infinite-scroll threshold="100px" (ionInfinite)="refreshList($event)" expand="block">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-
 </ion-content>

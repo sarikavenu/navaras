@@ -6,16 +6,16 @@
 </ion-header>
 
 <ion-content>
-<div slot="fixed" class="bg-image" style="background-image: url(movie.img);">
-  <img style="width:200%;" [src]="movie.img"/>
-</div>
-<div class="bg-text">
-  <img style="width:100%" [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>
-</div>
+  <!-- <div slot="fixed" class="bg-image" style="background-image: url(movie.img);">
+    <img style="width:200%;" [src]="movie.img"/>
+  </div> -->
+  <div class="bg-text">
+    <img style="width:100%" [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>
+  </div>
 </ion-content>
 
 <ion-content>
-  <ion-list style="text-align:center" > 
+  <ion-list style="text-align:center" class=""> 
   <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button>
   <!-- we need to open youtube app when clicked on this button -->
   <ion-button size="small" color="danger" onclick="window.open('movie.playLink', '_system', 'location=yes');">YouTube</ion-button>
