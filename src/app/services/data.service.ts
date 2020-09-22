@@ -40,14 +40,34 @@ export class DataService {
 }
 
 export interface Movie {
-  title: string;
-  url: string;
-  year: number;
-  img: string;
-  description: string;
-  duration: string;
-  directedBy: string;
-producedBy: string;
-musicBy:string;
+  // title: string;
+  // url: string;
+  // year: number;
+  // img: string;
+  // description: string;
+  // duration: string;
+  // directedBy: string;
+  // producedBy: string;
+  // musicBy:string;
+
+  url: string,
+  title: string,
+  description: string,
+  year: number,
+  img: string,
+  playLink: string,
+  genre: string,
+  language: string,
+  directedBy: string,
+  producedBy: string,
+  musicBy: string,
+  staring: string,
+  wikiLink: string,
+  writtenBy: string,
+  cinematography: string,
+  editedBy: string,
+  Production: string,
+  releaseDate: string,
+  runningTime: string,
 
 }
