@@ -16,9 +16,14 @@
 
 <ion-content>
   <ion-list style="text-align:center" class=""> 
-  <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button>
+  <!-- <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button> -->
   <!-- we need to open youtube app when clicked on this button -->
-  <ion-button size="small" color="danger" onclick="window.open('movie.playLink', '_system', 'location=yes');">YouTube</ion-button>
+  <div>
+    <ion-button size="small" color="warning" (click)="openYoutube(movie.playLink)">
+      <ion-icon size="large" name="logo-youtube" slot="start" color="danger">YouTube</ion-icon>
+      Let's Watch
+    </ion-button>
+  </div>
 </ion-list>
     <ion-card>
       <ion-card-content>
@@ -97,4 +102,13 @@
         </ion-grid>
         </ion-card-content>
     </ion-card>
+    <ion-list style="text-align:center" class=""> 
+      <!-- <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button> -->
+      <!-- we need to open youtube app when clicked on this button -->
+      <div>
+        <ion-button size="small" color="warning">
+          Report<ion-icon name="ellipsis-vertical-outline"></ion-icon>          
+        </ion-button>
+      </div>
+    </ion-list>
 </ion-content>

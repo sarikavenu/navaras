@@ -10,7 +10,7 @@
     <ion-searchbar placeholder="Search title, year, starring..." (ionInput)="search($event)"></ion-searchbar>
   </ion-toolbar>
   <ion-toolbar class="titlebar">
-    <ion-segment scrollable value="all" color="success">
+    <ion-segment scrollable value="all" color="red">
       <ion-segment-button value="all" (click)="getList('')">
         <ion-label>All</ion-label>
       </ion-segment-button>
@@ -62,11 +62,12 @@
     </ion-toolbar>
   </ion-header>
   <ion-content>
-    <ion-list>
+    <ion-list lines="none">
       <ion-item (click)="selectLanguage('')">All</ion-item>
       <ion-item (click)="selectLanguage('Hindi')">Hindi</ion-item>
       <ion-item (click)="selectLanguage('tamil')">Tamil</ion-item>
       <ion-item (click)="selectLanguage('telugu')">Telugu</ion-item>
+      <ion-item>Feedback</ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>

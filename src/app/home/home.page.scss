@@ -1,6 +1,6 @@
 .titlebar {
-  --background: #28a745; //from landing page
-}
+  --background: #69bb7b; //from landing page
+  }
 
 ion-content {
   --ion-background-color:#181818;
@@ -19,7 +19,7 @@ ion-menu {
   --ion-text-color: var(--ion-color-primary-contrast);
 
   ion-toolbar {
-    --background: var(--ion-color-secondary);
+    --background: var(--ion-color-primary);
   }
 
   ion-list {/* optional, but it needs when you use gradient as a background color.*/
@@ -32,7 +32,7 @@ ion-segment-button {
 }
 
 ion-segment {
-  --ion-background-color:#5a5a5a;
+  --ion-background-color: orange;
   background-color:#5a5a5a;
 }
 

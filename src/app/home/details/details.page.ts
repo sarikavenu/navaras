@@ -5,11 +5,15 @@ import {DomSanitizer} from '@angular/platform-browser';
 import { Movie } from "../../services/data.service";
 import { VideoDialogPage } from "../../pages/video-dialog/video-dialog.page";
 import { formatDate } from '@angular/common';
+import { AppAvailability } from '@ionic-native/app-availability/ngx';
+import { InAppBrowser, InAppBrowserObject } from '@ionic-native/in-app-browser/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
   styleUrls: ['./details.page.scss'],
+  providers: [InAppBrowser, AppAvailability],
 })
 export class DetailsPage implements OnInit {
 
@@ -18,10 +22,41 @@ export class DetailsPage implements OnInit {
   constructor(private activeRoute:ActivatedRoute,
     public modalCtrl:ModalController,
     public navParms:NavParams,
+    public platform: Platform,
+    private appAvailability: AppAvailability,
+    private inAppBrowser: InAppBrowser,
     public  sanitizer:DomSanitizer, public modalDialog: ModalController) {
       this.movie = this.navParms.data.movie;
     }
 
+    openYoutube(video) {
+      let app;
+  
+      if (this.platform.is('ios')) {
+        app = 'youtube://';
+      } else if (this.platform.is('android')) {
+        app = 'com.google.android.youtube';
+      } else {
+        const browser: InAppBrowserObject = this.inAppBrowser.create(video, '_system');
+        return;
+      }
+  
+      this.appAvailability.check(app)
+        .then(
+          (yes: boolean) => {
+            console.log(app + ' is available')
+            // Success
+            // App exists
+            const browser: InAppBrowserObject = this.inAppBrowser.create(video, '_system');
+          },
+          (no: boolean) => {
+            // Error
+            // App does not exist
+            // Open Web URL
+            const browser: InAppBrowserObject = this.inAppBrowser.create(video, '_system');
+          }
+        );
+    }
   ngOnInit() {
   }
 
