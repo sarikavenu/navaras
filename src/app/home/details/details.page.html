@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="titlebar">
     <ion-title class="ion-text-center">{{movie.title}}</ion-title>
-    <ion-button (click)="dismiss()" slot="end" size="small" class="ion-margin-end">Close</ion-button>
+    <ion-button (click)="dismiss()" slot="end" size="small" class="ion-margin-end" color="dark">Close</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,16 +10,14 @@
     <img style="width:200%;" [src]="movie.img"/>
   </div> -->
   <div class="bg-text">
-    <img style="width:100%" [src]="movie.img" (click)="showVideo(movie.playLink, movie.title)"/>
+    <img style="width:100%" [src]="movie.img"/>
   </div>
 </ion-content>
 
 <ion-content>
   <ion-list style="text-align:center" class=""> 
-  <!-- <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button> -->
-  <!-- we need to open youtube app when clicked on this button -->
   <div>
-    <ion-button size="small" color="warning" (click)="openYoutube(movie.playLink)">
+    <ion-button size="small" style="--background:#69bb7b" (click)="openYoutube(movie.playLink)">
       <ion-icon size="large" name="logo-youtube" slot="start" color="danger">YouTube</ion-icon>
       Let's Watch
     </ion-button>
@@ -103,12 +101,12 @@
         </ion-card-content>
     </ion-card>
     <ion-list style="text-align:center" class=""> 
-      <!-- <ion-button size="small" color="success" (click)="showVideo(movie.playLink, movie.title)">Play</ion-button> -->
-      <!-- we need to open youtube app when clicked on this button -->
+
       <div>
-        <ion-button size="small" color="warning">
+        <ion-button size="small" style="--background:#69bb7b">
           Report<ion-icon name="ellipsis-vertical-outline"></ion-icon>          
         </ion-button>
       </div>
+
     </ion-list>
 </ion-content>
