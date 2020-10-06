@@ -1,8 +1,8 @@
 {
   "name": "navaras",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "navaras team",
+  "homepage": "https://navaras.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
