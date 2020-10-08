@@ -3,7 +3,7 @@
     <ion-buttons slot="start" id="menu">
       <ion-menu-button menuToggle left style="color:#181818"></ion-menu-button>
     </ion-buttons>
-    <ion-title class="ion-text-center" style="font-size: 1.5rem;">navaras</ion-title>  
+    <ion-title class="ion-text-center" style="font-size: 1.2rem;">navaras</ion-title>  
   </ion-toolbar>
 
   <ion-toolbar class="titlebar">
@@ -67,9 +67,13 @@
       <ion-item (click)="selectLanguage('Hindi')">Hindi</ion-item>
       <ion-item (click)="selectLanguage('tamil')">Tamil</ion-item>
       <ion-item (click)="selectLanguage('telugu')">Telugu</ion-item>
-      <ion-item>Feedback</ion-item>
     </ion-list>
   </ion-content>
+  <ion-footer lines="none">
+    <ion-list lines="none">
+      <ion-item style="--background:#69bb7b"><ion-icon slot="start" name="paper-plane-outline"></ion-icon>Feedback</ion-item>
+    </ion-list>
+  </ion-footer>
 </ion-menu>
 <ion-router-outlet id="main"></ion-router-outlet>
 
