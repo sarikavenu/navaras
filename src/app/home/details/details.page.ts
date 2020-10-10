@@ -18,6 +18,8 @@ import { Platform } from '@ionic/angular';
 export class DetailsPage implements OnInit {
 
   movie: Movie;
+  isPlayLink: any;
+  playLinkText: any;
 
   constructor(private activeRoute:ActivatedRoute,
     public modalCtrl:ModalController,
@@ -27,6 +29,16 @@ export class DetailsPage implements OnInit {
     private inAppBrowser: InAppBrowser,
     public  sanitizer:DomSanitizer, public modalDialog: ModalController) {
       this.movie = this.navParms.data.movie;
+      console.log('movie :',this.movie);
+      if(this.movie.playLink !=null){
+        this.playLinkText="Let's Watch";
+        this.isPlayLink=false;
+      }
+      else
+      {
+        this.playLinkText="Coming Soon";
+        this.isPlayLink=true;
+      }
     }
 
     openYoutube(video) {

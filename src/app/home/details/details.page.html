@@ -16,12 +16,12 @@
 
 <ion-content>
   <ion-list style="text-align:center" class=""> 
-  <div>
-    <ion-button style="--background:#69bb7b" (click)="openYoutube(movie.playLink)">
-      <ion-icon size="large" name="logo-youtube" slot="start" color="danger">YouTube</ion-icon>
-      Let's Watch
-    </ion-button>
-  </div>
+    <div>
+      <ion-button style="--background:#69bb7b" disabled='{{isPlayLink}}' (click)="openYoutube(movie.playLink)">
+        <ion-icon size="large" name="logo-youtube" slot="start" color="danger">YouTube</ion-icon>
+        {{playLinkText}}
+      </ion-button>
+    </div>
 </ion-list>
     <ion-card>
       <ion-card-content>
