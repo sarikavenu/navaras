@@ -8,6 +8,7 @@ import { formatDate } from '@angular/common';
 import { AppAvailability } from '@ionic-native/app-availability/ngx';
 import { InAppBrowser, InAppBrowserObject } from '@ionic-native/in-app-browser/ngx';
 import { Platform } from '@ionic/angular';
+import { ReportPage} from '../report/report.page';
 
 @Component({
   selector: 'app-details',
@@ -86,5 +87,13 @@ export class DetailsPage implements OnInit {
   dismiss(){
     this.modalCtrl.dismiss();
   }
-
+  async onreportclick(obj:any){
+    console.log("vImg:"+obj);
+    const modal = await this.modalDialog.create({
+      component: ReportPage,
+      componentProps: { movie: obj},
+      cssClass: 'viewVideoModal'
+    })
+    return modal.present();
+  }
 }

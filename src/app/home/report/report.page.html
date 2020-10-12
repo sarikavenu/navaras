@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>report</ion-title>
+ 
+      <ion-button (click)="dismiss()" slot="end" size="small" class="ion-margin-end" color="dark">Close</ion-button>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content>
+    <form [formGroup]="reportForm"> 
+      <ion-item>
+        <ion-label position="floating" color="primary">Reporter</ion-label>
+        <ion-input color="light" type="text" formControlName="name" class="form-controll" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" color="primary">Description</ion-label>
+        <ion-input color="light" type="text" formControlName="country" class="form-controll" required></ion-input>
+      </ion-item>
+      <ion-button size="small" style="--background:#69bb7b"  (click)="submit()">Submit</ion-button>
+    </form>
+  </ion-content> 
